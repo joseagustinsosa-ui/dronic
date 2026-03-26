@@ -11,3 +11,6 @@ dependencies = ["fastapi",
 "sqlalchemy",
 "pydantic",
 "python-multipart"]
+
+[tool.setuptools]
+py-modules = ["main", "db", "models", "schemas", "migrate_financial", "migrate_void"]
