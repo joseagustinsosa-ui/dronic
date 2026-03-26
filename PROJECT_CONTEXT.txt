@@ -1,0 +1,55 @@
+Proyecto: DRONIC
+
+Estructura actual:
+- backend en ./backend
+- frontend en ./frontend
+
+Backend:
+- FastAPI
+- archivos principales: main.py, models.py, schemas.py, db.py
+- base actual: dronic.db
+- uploads existe pero está vacía
+- pyproject.toml y uv.lock presentes
+
+Frontend:
+- React + TypeScript + Vite
+- páginas principales:
+  - ServiceOrdersPage.tsx
+  - ServiceOrderDetailPage.tsx
+- servicios principales:
+  - api.ts
+  - assets.ts
+  - clients.ts
+  - serviceOrders.ts
+- .env actual:
+  VITE_API_BASE_URL=https://dronic-core.replit.app
+
+Estado funcional confirmado:
+- lista de órdenes funciona
+- detalle de orden funciona
+- nombre de cliente ya aparece en lista y detalle
+- sección de assets/evidencias existe
+- subida de evidencia desde detalle existe
+
+Decisiones de negocio ya tomadas:
+- roles:
+  - admin
+  - operator
+  - client
+- operator incluye socio y piloto
+- socio NO será admin
+- admin valida recepción final del dinero por DRONIC
+- flujo real de dinero puede ser:
+  cliente -> piloto/operator -> socio/operator -> DRONIC -> validación admin
+- por eso no basta con un solo campo pagado sí/no
+
+Modelo conceptual acordado para próxima fase:
+1. service_orders tendrá resumen financiero
+2. habrá tabla payment_events para trazar movimientos de dinero
+3. assets también servirá para evidencia financiera
+4. futuros asset_type:
+   - work_evidence
+   - customer_payment_proof
+   - cash_handover_proof
+   - dronic_receipt_proof
+   - operator_payment_proof

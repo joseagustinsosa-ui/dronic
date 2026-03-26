@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+env/
+backend/.venv/
+
+# Node
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# Local environment files
+.env
+.env.*
+backend/.env
+frontend/.env
+frontend/.env.*
+
+# Local database and uploads
+*.db
+backend/*.db
+uploads/
+data/
+
+# Local tool/session folders
+.claude/
+notes/
+# Local backups / logs
+*.bak
+*.prevoid
+*.out
+backend/backend_out.txt
